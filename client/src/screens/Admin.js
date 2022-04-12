@@ -84,7 +84,7 @@ export default function Admin() {
     } else {
       // Get all articles
       axios
-        .get("http://localhost:5000/api/articles/getallarticles")
+        .get(`http://localhost:${process.env.PORT}/api/articles/getallarticles`)
         .then((result) => {
           setFilterdArticles(result.data);
           setAllArticles(result.data);
@@ -96,7 +96,7 @@ export default function Admin() {
 
       // Get all users
       axios
-        .get("http://localhost:5000/api/users/getallusers")
+        .get(`http://localhost:${process.env.PORT}/api/users/getallusers`)
         .then((result) => {
           setfilteredUsers(result.data);
           setAllUsers(result.data);

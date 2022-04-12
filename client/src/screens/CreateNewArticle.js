@@ -83,7 +83,7 @@ export default function NewArticle() {
         authorId: user.id
       };
       axios
-        .post("http://localhost:5000/api/articles/new", newArticle)
+        .post(`http://localhost:${process.env.PORT}/api/articles/new`, newArticle)
         .then((res) => {
           document.querySelector("#title").innerHTML = res.data.message;
           setTimeout(() => {

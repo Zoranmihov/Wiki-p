@@ -72,7 +72,7 @@ export default function EditArticle() {
     let url = window.location.pathname.split("/");
     let id = { id: url[3] };
     axios
-      .post("http://localhost:5000/api/articles/getarticle", id)
+      .post(`http://localhost:${process.env.PORT}/api/articles/getarticle`, id)
       .then((res) => {
         setarticle(res.data);
       })
@@ -95,7 +95,7 @@ export default function EditArticle() {
         eddited: user.email,
       };
       axios
-        .put("http://localhost:5000/api/articles/updatearticle", updatedarticle)
+        .put(`http://localhost:${process.env.PORT}/api/articles/updatearticle`, updatedarticle)
         .then((res) => {
           document.querySelector("#title").innerHTML = res.data.message;
           setTimeout(() => {

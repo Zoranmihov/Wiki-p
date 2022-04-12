@@ -89,7 +89,7 @@ export default function Profile() {
     let isTrue = window.confirm("Are you sure you want to delete this profile?");
       if(isTrue){
       axios
-        .put("http://localhost:5000/api/users/deleteuser", user.id)
+        .put(`http://localhost:${process.env.PORT}/api/users/deleteuser`, user.id)
         .then((res) => {
           document.querySelector("#title").innerHTML = res.data.message;
           setTimeout(() => {
@@ -138,7 +138,7 @@ export default function Profile() {
         updatedUser.password = newpassword;
       }
       axios
-        .put("http://localhost:5000/api/users/update", updatedUser)
+        .put(`http://localhost:${process.env.PORT}/api/users/update`, updatedUser)
         .then((res) => {
           document.querySelector("#title").innerHTML = res.data.message;
           setTimeout(() => {

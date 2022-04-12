@@ -92,7 +92,7 @@ export default function AdminUsers() {
       }
     } else {
       axios
-        .post("http://localhost:5000/api/users/getuser", id)
+        .post(`http://localhost:${process.env.PORT}/api/users/getuser`, id)
         .then((res) => {
           setCUser(res.data);
         })
@@ -142,7 +142,7 @@ export default function AdminUsers() {
         updatedUser.password = newpassword;
       }
       axios
-        .put("http://localhost:5000/api/users/update", updatedUser)
+        .put(`http://localhost:${process.env.PORT}/api/users/update`, updatedUser)
         .then((res) => {
           document.querySelector("#title").innerHTML =
             "User updated refreshing page";
@@ -169,7 +169,7 @@ export default function AdminUsers() {
       );
       if (isTrue) {
         axios
-          .put("http://localhost:5000/api/users/deleteuser", id)
+          .put(`http://localhost:${process.env.PORT}/api/users/deleteuser`, id)
           .then((res) => {
             document.querySelector("#title").innerHTML = res.data.message;
             setTimeout(() => {

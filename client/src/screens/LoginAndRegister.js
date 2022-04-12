@@ -127,7 +127,7 @@ export default function Login() {
         password,
       };
       axios
-        .post("http://localhost:5000/api/users/register", newUser)
+        .post(`http://localhost:${process.env.PORT}/api/users/register`, newUser)
         .then(
           (res) =>
             (document.querySelector("#register-message").innerHTML =
@@ -148,7 +148,7 @@ export default function Login() {
       password: logpassword,
     };
     axios
-      .post("http://localhost:5000/api/users/login", user)
+      .post(`http://localhost:${process.env.PORT}/api/users/login`, user)
       .then((res) => {
         if(res.data.foundUser){
           Cookies.set("User", `${JSON.stringify(res.data.foundUser)}`, {
