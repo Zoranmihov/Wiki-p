@@ -78,7 +78,7 @@ export default function Article() {
   let id = { id: url[2] };
   useEffect(() => {
     axios
-      .post(`http://localhost:${process.env.PORT}/api/articles/getarticle`, id)
+      .post(`/api/articles/getarticle`, id)
       .then((res) => {
         setarticle(res.data);
       })
@@ -91,7 +91,7 @@ export default function Article() {
   let deleteArticle = () => {
     if (user.role == "admin" || user.id == article.authorId) {
       axios
-        .put(`http://localhost:${process.env.PORT}/api/articles/deletearticle`, id)
+        .put(`/api/articles/deletearticle`, id)
         .then((res) => {
           document.querySelector("#title").innerHTML = res.data.message;
           setTimeout(() => {

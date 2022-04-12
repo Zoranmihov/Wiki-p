@@ -65,7 +65,7 @@ export default function AllArticles() {
   let { user } = useContext(User);
   useEffect(() => {
     axios
-      .get(`http://localhost:${process.env.PORT}/api/articles/getallarticles`)
+      .get(`/api/articles/getallarticles`)
       .then((result) => {
         setFilterdArticles(result.data);
         setarticles(result.data);
