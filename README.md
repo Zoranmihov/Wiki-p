@@ -5,3 +5,7 @@ A small MERN stack basic CURD Wikipedia type project where users can post articl
 # How to use:
 
 This project dosen't use email authentication so you can enter a fake email in the registration form, or if you would preffer to see the the site from an admin's perspective you can use this account email admin@hotmail.com password Admin123
+
+## Demo:
+
+https://zoran-wiki.herokuapp.com/
